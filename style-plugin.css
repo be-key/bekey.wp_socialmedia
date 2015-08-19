@@ -1,0 +1,167 @@
+/* CSS Document */
+
+/* mise enforme widget instagram - frontend */
+/* grille */
+ul.widget-instagram {
+	display: inline-table;
+	width: 100%;
+}
+ul.widget-instagram li{
+	float: left;
+	width: 50%;
+	padding: 2.5px;
+	box-sizing: border-box;
+}
+ul.widget-instagram li .item{
+	display: block;
+	position: relative;
+}
+/* slider */
+.widget .slider-instagram img{
+	max-width: none;
+}
+
+.socialwall {
+	box-sizing: border-box;
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+}
+
+.socialwall .item {
+	background-color: #55acee;
+	box-sizing: border-box;
+	color: #ffffff;
+	margin:0 1% 10px 0;
+	overflow: hidden;
+	padding: 10px;
+	text-decoration: none;
+	width: 24%;
+	float: left;
+}
+.socialwall .item.hidden{
+	display:block;
+	opacity: 0.5;
+}
+.socialwall .item.instagram { background-color: #1c5380; }
+.socialwall .item.facebook { background-color: #3b5998; }
+
+.socialwall .item img { max-width: 100%; }
+.socialwall .item .contentImage img { position: absolute; width: 50px; }
+
+.socialwall .item .content { margin-left: 60px; }
+.socialwall .item  p { margin: 0px; }
+.socialwall .item.instagram  p { margin-top: 10px; }
+.socialwall .item  p.description { font-size: 11px; font-style: italic; margin: 10px 0 0; }
+.socialwall .item.instagram  p.description, .socialwall .item.facebook  p.description { color: #eee; }
+
+/* social wall - item facebook */
+.socialwall .item.facebook p:first-of-type, .socialwall .item.instagram p:first-of-type{ margin: 0; }
+.socialwall .item.facebook .wrapper_content{
+	border-top: #eee solid 1px;
+	margin-top: 15px;
+	padding-top: 15px;
+}
+.socialwall .item.facebook .content_url,
+.socialwall .item.facebook .content_description{
+	box-sizing: border-box;
+	float: left;
+	width: 70%;
+}
+.socialwall .item.facebook .content_url{ width: 30%; }
+.socialwall .item.facebook .content_description{ padding-left: 10px; }
+
+/* debut action item */
+.socialwall .item .overlay,
+.widget-instagram li .item .overlay{
+	background-color: #333;
+	left: 0px;
+	opacity: 0;
+	transition:opacity 0.5s ease-in-out 0.1s;
+	position: absolute;
+	top: 0px;
+	height: 100%;
+	width: 100%;
+	z-index: 0;
+}
+.socialwall .item:hover .overlay,
+.widget-instagram li:hover .item .overlay{ opacity: 0.6; }
+
+.socialwall .item .content-action{
+	position: absolute;
+	transition:right 0.3s ease-in-out 0.3s;
+	right: -30px;
+	top: 0px;
+	z-index: 10;
+}
+.socialwall .item .action{
+	background-color: #fff;
+	color: #666;
+	cursor: pointer;
+	display: block;
+	height: 30px;
+	width: 30px;
+	
+}
+.socialwall .item .action .dashicons{
+	font-size: 24px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	width: 30px;
+}
+.socialwall .item .action .dashicons.dashicons-no{
+	color: #e14d43;
+}
+.socialwall .item:hover .content-action{ right: 0; }
+.socialwall .item.tweet .action:hover{ background-color: #55acee; color: #fff; }
+/* fin action item */
+
+/* début spinner */
+.dot-spinner {
+  margin: -9px 0 0 -35px;
+  width: 70px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.dot-spinner > div {
+  width: 18px;
+  height: 18px;
+  background-color: #fff;
+
+  border-radius: 100%;
+  display: inline-block;
+  -webkit-animation: bouncedelay 1.4s infinite ease-in-out;
+  animation: bouncedelay 1.4s infinite ease-in-out;
+  /* Prevent first frame from flickering when animation starts */
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.dot-spinner .bounce1 {
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+
+.dot-spinner .bounce2 {
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+
+@-webkit-keyframes bouncedelay {
+  0%, 80%, 100% { -webkit-transform: scale(0.0) }
+  40% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes bouncedelay {
+  0%, 80%, 100% { 
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  } 40% { 
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+  }
+}
+/* fin spinner */
