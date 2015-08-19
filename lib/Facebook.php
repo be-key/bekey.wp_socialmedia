@@ -17,7 +17,10 @@ class Facebook{
 	
 	public function __construct(){
 		
-		FacebookSession::setDefaultApplication(get_option('facebook_app_id'), get_option('facebook_app_secret') );
+		$facebook_app_id =  ( get_option('facebook_app_id') === false )? "0000" : get_option('facebook_app_id');
+		$facebook_app_secret =  ( get_option('facebook_app_secret') === false )? "0000" : get_option('facebook_app_secret');
+
+		FacebookSession::setDefaultApplication( $facebook_app_id, $facebook_app_secret );
 		
 		//FacebookSession::setDefaultApplication($this->_app_id, $this->_app_secret );
 		
